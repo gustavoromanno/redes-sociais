@@ -1,5 +1,5 @@
 {
- "atualizado": 1795471933753,
+ "atualizado": 1795475949840,
  "pautas": [
   {
    "id": "v0vzw3b",
@@ -10,7 +10,7 @@
    "dia": "2026-11-30",
    "hora": "12:00",
    "video": "",
-   "notas": "Objetivo: Engajamento\nComo medir: Comentários e salvamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-planilha-dia10\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "notas": "Objetivo: Engajamento\nComo medir: Comentários e salvamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-planilha-dia10\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11\nArtes (7 slides): https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-Main",
    "roteiro": "1 (capa): Abandonou a planilha / *no dia 10?*\n2: Dia 1: planilha nova, cores, metas.\n3: Dia 5: esqueceu de lançar o café, o Uber, o Pix.\n4: Dia 10: o saldo não bate com o banco. Desistiu.\n5: Não é falta de disciplina. É trabalho demais.\n6: Buckley: contas, cartões e parcelas num lugar só (imagem ilustrativa).\n7: Teste antes de todo mundo → link na bio.",
    "feito": {},
    "destinos": {
@@ -21,7 +21,8 @@
      "status": "rascunho",
      "link": ""
     }
-   }
+   },
+   "arte": "https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-Main"
   },
   {
    "id": "r25qdew",
@@ -32,7 +33,7 @@
    "dia": "2026-11-30",
    "hora": "19:00",
    "video": "",
-   "notas": "Objetivo: Alcance\nComo medir: Visualizações, compartilhamentos e % assistido\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-pov-fatura\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "notas": "Objetivo: Alcance\nComo medir: Visualizações, compartilhamentos e % assistido\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-pov-fatura\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11\nArtes (capa do Reel): https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-seg30-19h-1",
    "roteiro": "(Se já tiver vídeo pronto sobre fatura, use aqui.)\n0–2s: texto “POV: a fatura do cartão chegou”.\n2–6s: você rolando a fatura, cara de confuso. Texto: “Quem comprou isso?”\n6–10s: “Ah… parcela 7 de 10 daquele tênis.”\n10–15s: tela do Buckley com faturas por mês (imagem ilustrativa). Texto: “No Buckley você escolhe em qual fatura a compra cai.”",
    "feito": {},
    "destinos": {
@@ -43,7 +44,8 @@
      "status": "rascunho",
      "link": ""
     }
-   }
+   },
+   "arte": "https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-seg30-19h-1"
   },
   {
    "id": "b8237we",
@@ -54,7 +56,7 @@
    "dia": "2026-12-02",
    "hora": "12:00",
    "video": "",
-   "notas": "Objetivo: Engajamento\nComo medir: Compartilhamentos e comentários\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=estatico-saldo-nao-bate\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "notas": "Objetivo: Engajamento\nComo medir: Compartilhamentos e comentários\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=estatico-saldo-nao-bate\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11\nArtes (1 arte): https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-qua02-12h-1",
    "roteiro": "Arte única 1080x1080, fundo creme.\nTítulo: O saldo da planilha / *nunca bate com o banco.*\nDuas colunas: “Banco: R$ 1.243,17” × “Planilha: R$ 1.890,00” (marcar “exemplo”).\nRodapé: O Buckley mostra o saldo de hoje e o do fim do mês.",
    "feito": {},
    "destinos": {
@@ -65,7 +67,8 @@
      "status": "rascunho",
      "link": ""
     }
-   }
+   },
+   "arte": "https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-qua02-12h-1"
   },
   {
    "id": "zf5bfuj",
@@ -76,7 +79,7 @@
    "dia": "2026-12-02",
    "hora": "19:00",
    "video": "",
-   "notas": "Objetivo: Lead\nComo medir: Cliques no link da bio e leads com esse utm_content no /admin/\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-tour-parcelas\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "notas": "Objetivo: Lead\nComo medir: Cliques no link da bio e leads com esse utm_content no /admin/\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-tour-parcelas\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11\nArtes (capa do Reel): https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-qua02-19h-1",
    "roteiro": "Gravação de tela, 15–25s:\nlançar compra de R$ 600 em 6x (exemplo) → escolher a fatura de dezembro → mostrar as parcelas nas próximas faturas.\nTexto na tela: “Parcelou? Lança uma vez só.”\nAviso fixo: “imagem ilustrativa · valores de exemplo”.",
    "feito": {},
    "destinos": {
@@ -87,7 +90,8 @@
      "status": "rascunho",
      "link": ""
     }
-   }
+   },
+   "arte": "https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-qua02-19h-1"
   },
   {
    "id": "wi6opvp",
@@ -98,7 +102,7 @@
    "dia": "2026-12-04",
    "hora": "12:00",
    "video": "",
-   "notas": "Objetivo: Engajamento\nComo medir: Salvamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-domingo-10min\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "notas": "Objetivo: Engajamento\nComo medir: Salvamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-domingo-10min\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11\nArtes (7 slides): https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-sex04-12h-1",
    "roteiro": "1 (capa): 10 minutos de domingo / *pra semana não te pegar.*\n2: Confira o saldo de cada conta.\n3: Veja o que vence até sexta.\n4: Olhe a fatura aberta do cartão.\n5: Separe o dinheiro das contas fixas.\n6: Escolha uma meta pequena pra semana.\n7: No Buckley isso tudo fica numa tela só. Link na bio.",
    "feito": {},
    "destinos": {
@@ -109,7 +113,8 @@
      "status": "rascunho",
      "link": ""
     }
-   }
+   },
+   "arte": "https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-sex04-12h-1"
   },
   {
    "id": "wa4nwpc",
@@ -120,7 +125,7 @@
    "dia": "2026-12-03",
    "hora": "19:00",
    "video": "",
-   "notas": "Objetivo: Lead\nComo medir: Leads com esse utm_content e cliques no link da bio\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-quanto-sobra\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "notas": "Objetivo: Lead\nComo medir: Leads com esse utm_content e cliques no link da bio\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-quanto-sobra\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11\nArtes (capa do Reel): https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-qui03-19h-1",
    "roteiro": "Você falando pra câmera, 25–30s:\n0–3s: “Quanto vai sobrar no fim do mês? Se você não sabe, fica comigo.”\n3–15s: “O saldo de hoje engana. Ele não conta a fatura que vai vencer, a parcela do dia 15, a conta de luz.”\n15–25s: tela do Buckley com saldo de hoje e saldo do fim do mês (imagem ilustrativa).\n25–30s: “Responde a pesquisa no link da bio e testa antes de todo mundo.”",
    "feito": {},
    "destinos": {
@@ -131,7 +136,8 @@
      "status": "rascunho",
      "link": ""
     }
-   }
+   },
+   "arte": "https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-qui03-19h-1"
   },
   {
    "id": "6m2up3e",
@@ -142,7 +148,7 @@
    "dia": "2026-12-01",
    "hora": "12:00",
    "video": "",
-   "notas": "Objetivo: Engajamento\nComo medir: Salvamentos e compartilhamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-fechamento-vencimento\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "notas": "Objetivo: Engajamento\nComo medir: Salvamentos e compartilhamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-fechamento-vencimento\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11\nArtes (7 slides): https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-ter01-12h-1",
    "roteiro": "1 (capa): Fechamento ou vencimento? / *Entenda de uma vez.*\n2: Fechamento: dia em que a fatura para de receber compras.\n3: Vencimento: dia de pagar.\n4: Comprou depois do fechamento? Cai na próxima fatura.\n5: Exemplo: fecha dia 3, vence dia 10. Compra no dia 4 → entra na fatura seguinte. (exemplo)\n6: Parcelas seguem a mesma regra: uma em cada fatura.\n7: No Buckley você escolhe em qual fatura a compra cai e navega entre elas.",
    "feito": {},
    "destinos": {
@@ -153,7 +159,8 @@
      "status": "rascunho",
      "link": ""
     }
-   }
+   },
+   "arte": "https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-ter01-12h-1"
   },
   {
    "id": "vptl5gu",
@@ -164,7 +171,7 @@
    "dia": "2026-12-01",
    "hora": "19:00",
    "video": "",
-   "notas": "Objetivo: Alcance\nComo medir: Visualizações e compartilhamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-dia-pagamento\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "notas": "Objetivo: Alcance\nComo medir: Visualizações e compartilhamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-dia-pagamento\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11\nArtes (capa do Reel): https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-ter01-19h-1",
    "roteiro": "(Se já tiver vídeo pronto sobre salário, use aqui.)\nTela dividida ou dois cortes:\n“Expectativa: salário caiu, vida resolvida.”\n“Realidade: aluguel, fatura, parcela, consignado… sobrou isso.”\nFechamento: “No Buckley você lança o salário com os descontos e o consignado e vê o que sobra de verdade.”",
    "feito": {},
    "destinos": {
@@ -175,7 +182,8 @@
      "status": "rascunho",
      "link": ""
     }
-   }
+   },
+   "arte": "https://claude.ai/artifact/AkHXPBVTFUmKC2N6tQn1iS#artboard-ter01-19h-1"
   },
   {
    "id": "s01j8zi",
