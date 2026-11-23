@@ -1,1 +1,357 @@
-{"atualizado":0,"pautas":[]}
+{
+ "atualizado": 1795471106179,
+ "pautas": [
+  {
+   "id": "v0vzw3b",
+   "grupo": "buckley",
+   "titulo": "Abandonou a planilha no dia 10?",
+   "formato": "Carrossel",
+   "etapa": "producao",
+   "dia": "2026-11-20",
+   "hora": "12:00",
+   "video": "",
+   "notas": "Objetivo: Engajamento\nComo medir: Comentários e salvamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-planilha-dia10\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "1 (capa): Abandonou a planilha / *no dia 10?*\n2: Dia 1: planilha nova, cores, metas.\n3: Dia 5: esqueceu de lançar o café, o Uber, o Pix.\n4: Dia 10: o saldo não bate com o banco. Desistiu.\n5: Não é falta de disciplina. É trabalho demais.\n6: Buckley: contas, cartões e parcelas num lugar só (imagem ilustrativa).\n7: Teste antes de todo mundo → link na bio.",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Se a sua planilha morreu no dia 10, você não está sozinho. O problema quase nunca é você: é lançar tudo à mão e o saldo nunca bater com o banco.\n\n👇 Em que dia a sua planilha costuma morrer?\n\nO Buckley está chegando. Responde a pesquisa de 3 minutos no link da bio e testa antes de todo mundo.\n\n#financaspessoais #planilhafinanceira #controlefinanceiro #organizacaofinanceira",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "r25qdew",
+   "grupo": "buckley",
+   "titulo": "POV: a fatura do cartão chegou",
+   "formato": "Reels",
+   "etapa": "producao",
+   "dia": "2026-11-20",
+   "hora": "19:00",
+   "video": "",
+   "notas": "Objetivo: Alcance\nComo medir: Visualizações, compartilhamentos e % assistido\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-pov-fatura\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "(Se já tiver vídeo pronto sobre fatura, use aqui.)\n0–2s: texto “POV: a fatura do cartão chegou”.\n2–6s: você rolando a fatura, cara de confuso. Texto: “Quem comprou isso?”\n6–10s: “Ah… parcela 7 de 10 daquele tênis.”\n10–15s: tela do Buckley com faturas por mês (imagem ilustrativa). Texto: “No Buckley você escolhe em qual fatura a compra cai.”",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Toda fatura tem aquela compra que você jura que não fez. 😅 Marca quem precisa ver isso.\n\nNo Buckley cada parcela aparece na fatura certa. Link na bio pra testar antes de todo mundo.\n\n#cartaodecredito #fatura #financaspessoais #humor",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "b8237we",
+   "grupo": "buckley",
+   "titulo": "O saldo da planilha nunca bate com o banco",
+   "formato": "Post",
+   "etapa": "producao",
+   "dia": "2026-11-21",
+   "hora": "10:00",
+   "video": "",
+   "notas": "Objetivo: Engajamento\nComo medir: Compartilhamentos e comentários\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=estatico-saldo-nao-bate\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "Arte única 1080x1080, fundo creme.\nTítulo: O saldo da planilha / *nunca bate com o banco.*\nDuas colunas: “Banco: R$ 1.243,17” × “Planilha: R$ 1.890,00” (marcar “exemplo”).\nRodapé: O Buckley mostra o saldo de hoje e o do fim do mês.",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "R$ 646,83 de diferença e nenhuma ideia de onde foi parar. Já aconteceu com você? 🙋\n\nNo Buckley o saldo é por conta, e você vê o de hoje e o do fim do mês. Pesquisa de 3 min no link da bio.\n\n(Valores ilustrativos.)\n\n#financaspessoais #controlefinanceiro #planilha #dinheiro",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "zf5bfuj",
+   "grupo": "buckley",
+   "titulo": "Parcelou? Lança uma vez só",
+   "formato": "Reels",
+   "etapa": "producao",
+   "dia": "2026-11-21",
+   "hora": "18:30",
+   "video": "",
+   "notas": "Objetivo: Lead\nComo medir: Cliques no link da bio e leads com esse utm_content no /admin/\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-tour-parcelas\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "Gravação de tela, 15–25s:\nlançar compra de R$ 600 em 6x (exemplo) → escolher a fatura de dezembro → mostrar as parcelas nas próximas faturas.\nTexto na tela: “Parcelou? Lança uma vez só.”\nAviso fixo: “imagem ilustrativa · valores de exemplo”.",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Lança a compra uma vez e o Buckley distribui as parcelas nas faturas certas. Sem conta de cabeça.\n\nQuer testar antes de todo mundo? Link na bio.\n\n#compraparcelada #cartaodecredito #financaspessoais #appdefinancas",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "wi6opvp",
+   "grupo": "buckley",
+   "titulo": "10 minutos de domingo pra organizar a semana",
+   "formato": "Carrossel",
+   "etapa": "producao",
+   "dia": "2026-11-22",
+   "hora": "10:00",
+   "video": "",
+   "notas": "Objetivo: Engajamento\nComo medir: Salvamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-domingo-10min\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "1 (capa): 10 minutos de domingo / *pra semana não te pegar.*\n2: Confira o saldo de cada conta.\n3: Veja o que vence até sexta.\n4: Olhe a fatura aberta do cartão.\n5: Separe o dinheiro das contas fixas.\n6: Escolha uma meta pequena pra semana.\n7: No Buckley isso tudo fica numa tela só. Link na bio.",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Salva pra fazer hoje à noite. ✅ Dez minutos agora poupam a semana inteira de susto.\n\nQual desses passos você sempre pula?\n\n#organizacaofinanceira #financaspessoais #rotina #dicasfinanceiras",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "wa4nwpc",
+   "grupo": "buckley",
+   "titulo": "Quanto vai sobrar no fim do mês?",
+   "formato": "Reels",
+   "etapa": "producao",
+   "dia": "2026-11-22",
+   "hora": "18:30",
+   "video": "",
+   "notas": "Objetivo: Lead\nComo medir: Leads com esse utm_content e cliques no link da bio\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-quanto-sobra\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "Você falando pra câmera, 25–30s:\n0–3s: “Quanto vai sobrar no fim do mês? Se você não sabe, fica comigo.”\n3–15s: “O saldo de hoje engana. Ele não conta a fatura que vai vencer, a parcela do dia 15, a conta de luz.”\n15–25s: tela do Buckley com saldo de hoje e saldo do fim do mês (imagem ilustrativa).\n25–30s: “Responde a pesquisa no link da bio e testa antes de todo mundo.”",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "O saldo de hoje não é o que vai sobrar. 👀 O Buckley mostra os dois.\n\nPesquisa de 3 minutos no link da bio: quem responde testa primeiro.\n\n#financaspessoais #fimdomes #controlefinanceiro #salario",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "6m2up3e",
+   "grupo": "buckley",
+   "titulo": "Fechamento ou vencimento? A fatura explicada",
+   "formato": "Carrossel",
+   "etapa": "producao",
+   "dia": "2026-11-23",
+   "hora": "12:00",
+   "video": "",
+   "notas": "Objetivo: Engajamento\nComo medir: Salvamentos e compartilhamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-fechamento-vencimento\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "1 (capa): Fechamento ou vencimento? / *Entenda de uma vez.*\n2: Fechamento: dia em que a fatura para de receber compras.\n3: Vencimento: dia de pagar.\n4: Comprou depois do fechamento? Cai na próxima fatura.\n5: Exemplo: fecha dia 3, vence dia 10. Compra no dia 4 → entra na fatura seguinte. (exemplo)\n6: Parcelas seguem a mesma regra: uma em cada fatura.\n7: No Buckley você escolhe em qual fatura a compra cai e navega entre elas.",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Fechamento e vencimento não são a mesma coisa, e confundir os dois bagunça o mês inteiro. 💳\n\nSalva pra consultar antes da próxima compra grande.\n\n#cartaodecredito #fatura #educacaofinanceira #financaspessoais",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "vptl5gu",
+   "grupo": "buckley",
+   "titulo": "Dia do pagamento: expectativa × realidade",
+   "formato": "Reels",
+   "etapa": "producao",
+   "dia": "2026-11-23",
+   "hora": "19:00",
+   "video": "",
+   "notas": "Objetivo: Alcance\nComo medir: Visualizações e compartilhamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-dia-pagamento\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "(Se já tiver vídeo pronto sobre salário, use aqui.)\nTela dividida ou dois cortes:\n“Expectativa: salário caiu, vida resolvida.”\n“Realidade: aluguel, fatura, parcela, consignado… sobrou isso.”\nFechamento: “No Buckley você lança o salário com os descontos e o consignado e vê o que sobra de verdade.”",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "O salário cai e some no mesmo dia. Quem nunca? 🫠\n\nNo Buckley o salário entra com descontos e consignado, e você vê o líquido de verdade. Link na bio.\n\n#salario #clt #financaspessoais #humor",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "s01j8zi",
+   "grupo": "buckley",
+   "titulo": "“É só R$ 49,90 por mês”",
+   "formato": "Carrossel",
+   "etapa": "producao",
+   "dia": "2026-11-24",
+   "hora": "12:00",
+   "video": "",
+   "notas": "Objetivo: Engajamento\nComo medir: Salvamentos e comentários\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-parcelinhas\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "1 (capa): “É só R$ 49,90 por mês” / *disse você, seis vezes.*\n2: Tênis: R$ 49,90. Fone: R$ 79,90. Curso: R$ 59,90. (exemplo)\n3: Celular: R$ 120,00. Viagem: R$ 89,90. Cadeira: R$ 65,00. (exemplo)\n4: Somando: R$ 464,60 por mês de parcelinhas. (exemplo)\n5: O problema não é parcelar. É perder a soma.\n6: O Buckley mostra quanto de cada fatura futura já está comprometido.\n7: Link na bio.",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Parcelinha sozinha não assusta. Seis juntas, sim. 😬\n\nAntes da Black Friday, soma as suas. Quanto deu? (Valores do post são exemplos.)\n\n#compraparcelada #blackfriday #financaspessoais #cartaodecredito",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "5n1insm",
+   "grupo": "buckley",
+   "titulo": "O fundador convida: teste antes de todo mundo",
+   "formato": "Reels",
+   "etapa": "producao",
+   "dia": "2026-11-24",
+   "hora": "19:00",
+   "video": "",
+   "notas": "Objetivo: Lead\nComo medir: Leads com esse utm_content\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-fundador-convite\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "Você falando pra câmera, 20–30s, sem roteiro decorado:\n“Eu sou o Gustavo e tô construindo o Buckley, um app pra quem cansou de planilha. Ainda não lançou. Quem responder a pesquisa de 3 minutos no link da bio testa antes de todo mundo. Me ajuda a construir o app que você vai usar.”",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Ainda não lançou, e é por isso que a sua opinião vale tanto agora. 🙏\n\nPesquisa de 3 minutos no link da bio. Quem responde e deixa contato testa primeiro.\n\n#empreendedorismo #startup #financaspessoais #appdefinancas",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "0ubw5fu",
+   "grupo": "buckley",
+   "titulo": "Antes da Black Friday, responda 4 perguntas",
+   "formato": "Carrossel",
+   "etapa": "producao",
+   "dia": "2026-11-25",
+   "hora": "12:00",
+   "video": "",
+   "notas": "Objetivo: Alcance\nComo medir: Compartilhamentos e salvamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-black-friday-4-perguntas\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "1 (capa): Antes da Black Friday, / *responda 4 perguntas.*\n2: Eu compraria isso se não estivesse em promoção?\n3: Em qual fatura essa compra vai cair?\n4: Quanto dessa fatura já está comprometido com parcelas?\n5: Quanto vai sobrar no fim do mês depois disso?\n6: Salva e manda pra quem vai passar o cartão na sexta.",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Não é pra não comprar. É pra comprar sabendo. 🛒\n\nSalva e manda pra quem vai passar o cartão na sexta.\n\n#blackfriday #blackfriday2026 #financaspessoais #consumoconsciente",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "dvg5vee",
+   "grupo": "buckley",
+   "titulo": "Buck: em breve",
+   "formato": "Reels",
+   "etapa": "producao",
+   "dia": "2026-11-25",
+   "hora": "19:00",
+   "video": "",
+   "notas": "Objetivo: Lead\nComo medir: Leads com esse utm_content e comentários\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-buck-em-breve\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "Teaser de 10–15s, tela escura, texto aparecendo:\n“O Buckley vai ganhar um assistente.” → “Conheça o Buck.” → “Assistente com IA dentro do app.” → “Em breve.” → “Quem responde a pesquisa testa primeiro. Link na bio.”\n(Não detalhar o que o Buck faz até o Gustavo confirmar.)",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Tem novidade chegando. 👀 O Buck, assistente com IA do Buckley, vem aí.\n\nEm breve. Quem responde a pesquisa no link da bio fica sabendo primeiro.\n\n#inteligenciaartificial #ia #financaspessoais #appdefinancas",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "amsn18o",
+   "grupo": "buckley",
+   "titulo": "Quanto você investiu esse ano, de verdade?",
+   "formato": "Carrossel",
+   "etapa": "producao",
+   "dia": "2026-11-26",
+   "hora": "12:00",
+   "video": "",
+   "notas": "Objetivo: Engajamento\nComo medir: Salvamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-investimentos\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "1 (capa): Quanto você investiu / *esse ano, de verdade?*\n2: Aporte: o que você coloca.\n3: Rendimento: o que o dinheiro gera.\n4: Retirada: o que você tira.\n5: Misturar os três é por que ninguém sabe quanto tem.\n6: No Buckley você registra cada um, mês a mês.\n7: Link na bio.\nRodapé de todos os slides: “Conteúdo educativo. Não é recomendação de investimento.”",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Aporte, rendimento e retirada são três coisas diferentes. Separar é o primeiro passo pra saber quanto você tem. 📊\n\nConteúdo educativo, não é recomendação de investimento.\n\n#investimentos #educacaofinanceira #financaspessoais #organizacaofinanceira",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "s4vfw9v",
+   "grupo": "buckley",
+   "titulo": "O carrinho × a fatura",
+   "formato": "Reels",
+   "etapa": "producao",
+   "dia": "2026-11-26",
+   "hora": "19:00",
+   "video": "",
+   "notas": "Objetivo: Alcance\nComo medir: Visualizações e compartilhamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=reel-carrinho-fatura\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "(Se já tiver vídeo pronto de humor, use aqui.)\nCorte 1: “Eu na Black Friday” → carrinho cheio, feliz.\nCorte 2: “Eu quando a fatura chega” → abrindo o app do banco, pânico.\nFechamento: “Antes de fechar o carrinho, veja em qual fatura cai. No Buckley isso fica claro.”",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Amanhã é Black Friday. A fatura vem depois. 😅 Marca quem vai precisar disso.\n\nLink na bio pra testar o Buckley antes de todo mundo.\n\n#blackfriday #cartaodecredito #humor #financaspessoais",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "7o5kfcg",
+   "grupo": "buckley",
+   "titulo": "Hoje é Black Friday",
+   "formato": "Post",
+   "etapa": "producao",
+   "dia": "2026-11-27",
+   "hora": "12:00",
+   "video": "",
+   "notas": "Objetivo: Alcance\nComo medir: Alcance e compartilhamentos\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=estatico-black-friday\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "Arte única 1080x1080, fundo verde-escuro, cartão com fatura em destaque.\nTítulo: Hoje é Black Friday. / *A fatura também vai chegar.*\nRodapé: logo Buckley.",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Não é pra não comprar. É pra comprar sabendo em qual fatura cai. 💳\n\nAs 4 perguntas pra fazer antes estão no post de quarta.\n\n#blackfriday #blackfriday2026 #cartaodecredito #financaspessoais",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  },
+  {
+   "id": "kisl344",
+   "grupo": "buckley",
+   "titulo": "Acesso antecipado: como funciona",
+   "formato": "Carrossel",
+   "etapa": "producao",
+   "dia": "2026-11-27",
+   "hora": "19:00",
+   "video": "",
+   "notas": "Objetivo: Lead\nComo medir: Leads com esse utm_content\nLink para stories (UTM): https://www.buckley.com.br/pesquisa/?utm_source=instagram&utm_campaign=organico-semana-2011&utm_content=carrossel-acesso-antecipado\nOrigem: planilha Calendário Instagram Buckley · 20 a 27/11",
+   "roteiro": "1 (capa): Acesso antecipado / *como funciona.*\n2: Responde a pesquisa de 3 minutos.\n3: Deixa seu contato no final.\n4: Quando o teste abrir, você recebe o convite antes de todo mundo.\n5: Suas respostas ajudam a decidir o que vem primeiro no app.\n6: Link na bio.",
+   "feito": {},
+   "destinos": {
+    "ig-buckley": {
+     "legenda": "Quer testar o Buckley antes de todo mundo? É simples: 3 minutos de pesquisa e seu contato. 👇\n\nLink na bio.\n\n#appdefinancas #financaspessoais #controlefinanceiro #novidade",
+     "cta": "",
+     "capa": "",
+     "status": "rascunho",
+     "link": ""
+    }
+   }
+  }
+ ]
+}
