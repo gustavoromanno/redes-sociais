@@ -289,13 +289,7 @@ const PAGINAS = {
     const semanaP = daSemana();
     return cabeca('Sexta · Planejar', 'Planejar semana.', 'Escolha as pautas de cada marca, o dia, o horário e onde cada uma sai. Depois veja o que falta preparar.', navSemana()) + `
     ${sug.length ? `<div class="card destaque"><h3>Sugestões do Claude para esta semana</h3>${sug.map(p => `<div class="li">${ponto(p)}<span class="cresce"><b>${esc(p.titulo)}</b> <span class="muted">${fmt(p.sugestao)} · ${(p.sugestao.destinos || []).map(id => PERFIS[id]?.rede).join(', ')}</span>${p.sugestao.motivo ? `<br><span class="muted">${esc(p.sugestao.motivo)}</span>` : ''}</span><button class="btn" data-acao="aceitar" data-id="${p.id}">Aceitar</button><button class="btn ghost" data-acao="recusar" data-id="${p.id}">Recusar</button></div>`).join('')}</div>` : ''}
-    <div class="duas">
-      <section><h2>Pautas disponíveis</h2>
-        ${cand.map(p => `<div class="card"><div>${ponto(p)}<b>${esc(p.titulo)}</b> <span class="muted">${esc(grupoNome(p))} · ${esc(p.formato || '')} · ${ETAPAS[p.etapa]}</span></div>
-          <div class="row"><select data-dia="${p.id}">${diasSemana().map((x, i) => `<option value="${x}">${DIAS[i]} ${dataCurta(x)}</option>`).join('')}</select>
-          <input type="time" data-hora-banco="${p.id}" value="12:00"><button class="btn" data-acao="puxar" data-id="${p.id}">Pôr na semana</button></div></div>`).join('') || '<p class="vazio">Sem pautas no banco. Adicione em Banco de pautas.</p>'}
-      </section>
-      <section><h2>Semana</h2>
+    <section><h2>Semana</h2>
         <div class="grade5">${diasSemana().map((dia, i) => `<div><div class="colhead">${DIAS[i]} ${dataCurta(dia)}</div>
           ${semanaP.filter(p => p.dia === dia).map(p => `<div class="card mini">${ponto(p)}<b>${esc(p.titulo)}</b>
             <input type="time" data-campo="hora" data-id="${p.id}" value="${p.hora || ''}">
@@ -303,9 +297,12 @@ const PAGINAS = {
             ${conflitos(p).map(c => `<p class="erro">${esc(c)}</p>`).join('')}
             <button class="link" data-acao="tirar" data-id="${p.id}">Tirar da semana</button></div>`).join('')}</div>`).join('')}</div>
       </section>
-    </div>
     <h2>Falta produzir ou revisar</h2>
-    ${semanaP.map(p => [p, faltas(p)]).filter(([, f]) => f.length).map(([p, f]) => `<div class="falta">${ponto(p)}<b>${esc(p.titulo)}</b> <span class="muted">${fmt(p)}</span> — ${f.join(', ')}</div>`).join('') || '<p class="vazio">Nada pendente nesta semana.</p>'}`;
+    ${semanaP.map(p => [p, faltas(p)]).filter(([, f]) => f.length).map(([p, f]) => `<div class="falta">${ponto(p)}<b>${esc(p.titulo)}</b> <span class="muted">${fmt(p)}</span> — ${f.join(', ')}</div>`).join('') || '<p class="vazio">Nada pendente nesta semana.</p>'}
+    <div class="disp"><h2>Pautas disponíveis</h2>
+        ${cand.map(p => `<div class="card"><div>${ponto(p)}<b>${esc(p.titulo)}</b> <span class="muted">${esc(grupoNome(p))} · ${esc(p.formato || '')} · ${ETAPAS[p.etapa]}</span></div>
+          <div class="row"><select data-dia="${p.id}">${diasSemana().map((x, i) => `<option value="${x}">${DIAS[i]} ${dataCurta(x)}</option>`).join('')}</select>
+          <input type="time" data-hora-banco="${p.id}" value="12:00"><button class="btn" data-acao="puxar" data-id="${p.id}">Pôr na semana</button></div></div>`).join('') || '<p class="vazio">Sem pautas no banco. Adicione em Banco de pautas.</p>'}</div>`;
   },
 
   revisar() {
