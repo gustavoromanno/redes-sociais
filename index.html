@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agenda — Romanno & Buckley</title><link rel="stylesheet" href="style.css"></head>
+<body data-painel="marcas">
+<header>
+  <nav><a href="index.html" class="on">Romanno & Buckley</a><a href="afiliados.html" class="">Afiliados</a></nav>
+  <h1 id="titulo"></h1>
+  <div class="row">
+    <button class="sec" data-sem="-1">◀</button><b id="semana"></b><button class="sec" data-sem="1">▶</button>
+  </div>
+  <div class="row abas">
+    <button data-aba="planejar">Sexta · Planejar</button><button data-aba="revisar">Sábado · Revisar e agendar</button>
+    <button data-aba="acompanhar">Semana · Acompanhar</button><button data-aba="contas">Contas</button>
+  </div>
+  <div class="row" id="filtros"><button data-filtro="todos">Todos</button><button data-filtro="romanno">Romanno Tecnologia</button><button data-filtro="buckley">Buckley</button></div>
+  <div id="aviso" class="hide"></div>
+</header>
+<main id="conteudo"></main>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>
