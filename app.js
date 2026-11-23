@@ -313,7 +313,7 @@ const PAGINAS = {
     <div class="duas larga">
     <section>${ps.map(p => `
       <div class="card">
-        <div class="cardhead"><div>${ponto(p)}<b>${esc(p.titulo)}</b> <span class="muted">${esc(grupoNome(p))} · ${fmt(p)}</span></div><button class="link" data-abrir="${p.id}">Abrir</button></div>
+        <div class="cardhead"><div>${ponto(p)}<b>${esc(p.titulo)}</b> <span class="muted">${esc(grupoNome(p))} · ${fmt(p)}</span></div><div class="row">${p.arte ? `<a class="link" href="${esc(p.arte)}" target="_blank" rel="noopener">Artes →</a>` : ''}<button class="link" data-abrir="${p.id}">Abrir</button></div></div>
         ${p.vitrine ? `<p class="muted">Vitrine/link: ${esc(p.vitrine)}</p>` : ''}
         <label>Link do vídeo (sobe uma vez só)<input data-campo="video" data-id="${p.id}" value="${esc(p.video)}" placeholder="Google Drive público ou URL direta"></label>
         <div class="row">${['roteiro', 'gravado', 'revisado'].map(k => `<label class="chk"><input type="checkbox" data-feito="${k}" data-id="${p.id}" ${p.feito[k] ? 'checked' : ''}> ${k}</label>`).join('')}</div>
@@ -351,7 +351,7 @@ const PAGINAS = {
           <select data-status="${id}" data-id="${p.id}">${Object.entries(STATUS).map(([k, v]) => `<option value="${k}" ${d.status === k ? 'selected' : ''}>${v}</option>`).join('')}</select>
           <input data-link="${id}" data-id="${p.id}" value="${esc(d.link)}" placeholder="Link do post">
           <div class="row">${d.link ? `<a class="link" href="${esc(d.link)}" target="_blank" rel="noopener">abrir</a>` : ''}
-          ${d.status === 'manual' ? `<button class="btn ghost" data-acao="copiar" data-id="${p.id}" data-d="${id}">Copiar legenda</button>${p.video ? `<a class="link" href="${esc(p.video)}" target="_blank" rel="noopener">baixar vídeo</a>` : ''}` : ''}</div>
+          ${p.arte ? `<a class="link" href="${esc(p.arte)}" target="_blank" rel="noopener">artes</a>` : ''}${d.status === 'manual' ? `<button class="btn ghost" data-acao="copiar" data-id="${p.id}" data-d="${id}">Copiar legenda</button>${p.video ? `<a class="link" href="${esc(p.video)}" target="_blank" rel="noopener">baixar vídeo</a>` : ''}` : ''}</div>
         </div>`).join('')).join('')}` : ''; }).join('')}`;
   },
 
@@ -458,6 +458,7 @@ function abrir(id) {
     <label>Ideia / funcionalidade confirmada<textarea data-campo="notas" data-id="${id}">${esc(p.notas)}</textarea></label>
     <label>Roteiro<textarea data-campo="roteiro" data-id="${id}">${esc(p.roteiro)}</textarea></label>
     <label>Link do vídeo<input data-campo="video" data-id="${id}" value="${esc(p.video)}"></label>
+    <label>Artes (link do design)<input data-campo="arte" data-id="${id}" value="${esc(p.arte)}"></label>${p.arte ? `<a class="link" href="${esc(p.arte)}" target="_blank" rel="noopener">Abrir artes →</a>` : ''}
     <div class="row"><button class="btn ghost" data-acao="apagar" data-id="${id}" type="button">Apagar pauta</button><button class="btn">Fechar</button></div></form>`;
   d.showModal();
 }
