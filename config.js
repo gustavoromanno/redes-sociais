@@ -1,8 +1,8 @@
 // Marcas: cores e marca correspondente no Metricool (blogId). Plano gratuito do Metricool = 1 marca.
 const MARCAS = {
-  romanno: { nome: 'Romanno Tecnologia', cor: '#1C3B2E', cor2: '#25503F', claro: '#E7EDE9', metricool: '8070522' },
+  romanno: { nome: 'Romanno Tecnologia', cor: '#1C3B2E', cor2: '#25503F', claro: '#E7EDE9', metricool: '' },
   buckley: { nome: 'Buckley', cor: '#173A2C', cor2: '#2E7A57', claro: '#E2EFE6', metricool: '' },
-  wear: { nome: 'Romanno Wear', cor: '#111111', cor2: '#2A2A2A', claro: '#ECEFED', metricool: '' },
+  wear: { nome: 'Romanno Wear', cor: '#111111', cor2: '#2A2A2A', claro: '#ECEFED', metricool: '8070522' },
 };
 
 // integ: 'metricool' (publica sozinho quando conectado), 'manual' (você posta; vídeo e legenda ficam prontos), 'pendente' (perfil a identificar).
@@ -15,10 +15,10 @@ const PERFIS = {
   'ig-buckley': { marca: 'buckley', rede: 'Instagram', nome: 'Instagram Buckley (@buckley_app)', integ: 'manual', compartilhaEm: [] },
   'fb-buckley': { marca: 'buckley', rede: 'Facebook', nome: 'Facebook Buckley (a identificar)', integ: 'pendente' },
   'th-buckley': { marca: 'buckley', rede: 'Threads', nome: 'Threads Buckley (a identificar)', integ: 'pendente' },
-  'tt-wear': { marca: 'wear', rede: 'TikTok', nome: 'TikTok Romanno Wear (@romannowear)', integ: 'manual' },
-  'ig-wear': { marca: 'wear', rede: 'Instagram', nome: 'Instagram Romanno Wear (a identificar)', integ: 'pendente', compartilhaEm: [] },
-  'th-wear': { marca: 'wear', rede: 'Threads', nome: 'Threads Romanno Wear (a identificar)', integ: 'pendente' },
-  'fb-wear': { marca: 'wear', rede: 'Facebook', nome: 'Facebook Romanno Wear (a identificar)', integ: 'pendente' },
+  'tt-wear': { marca: 'wear', rede: 'TikTok', nome: 'TikTok Romanno Wear (@romannowear)', integ: 'metricool', conectado: true },
+  'ig-wear': { marca: 'wear', rede: 'Instagram', nome: 'Instagram Lorenzo Bennett (@lorenzoobennett)', integ: 'metricool', conectado: true, compartilhaEm: [] },
+  'th-wear': { marca: 'wear', rede: 'Threads', nome: 'Threads Lorenzo Bennett (@lorenzoobennett)', integ: 'metricool', conectado: true },
+  'fb-wear': { marca: 'wear', rede: 'Facebook', nome: 'Facebook Lorenzo Bennett Achados Masculinos', integ: 'metricool', conectado: true },
 };
 
 const PAINEIS = {
