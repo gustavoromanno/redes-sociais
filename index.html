@@ -12,5 +12,5 @@
 </aside>
 <main><div id="aviso" class="hide"></div><div id="conteudo"></div></main>
 <dialog id="modal"></dialog>
-<script src="config.js"></script><script src="app.js"></script>
+<script>/* evita versão antiga em cache */for (const s of ['config.js', 'app.js']) document.write('<script src="' + s + '?v=' + Date.now() + '"><\/script>');</script>
 </body></html>

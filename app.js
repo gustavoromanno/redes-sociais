@@ -437,7 +437,7 @@ function analise(rede) {
   return cabeca('Análise', `${rede}.`, `Os números chegam sozinhos: o Claude lê o Metricool todo dia e grava em data/metricas.json.${metr.atualizado ? ' Última leitura: ' + new Date(metr.atualizado).toLocaleString('pt-BR') + '.' : ''}`, tabs) +
     ids.map(id => {
       const m = metr.perfis?.[id], f = PERFIS[id];
-      if (!m) return `<div class="card"><h3>${esc(f.nome)}</h3><p class="vazio">Sem dados ainda: este perfil precisa estar conectado no Metricool.</p><a class="btn" href="#contas">Conectar →</a></div>`;
+      if (!m) return f.conectado ? `<div class="card"><h3>${esc(f.nome)}</h3><p class="vazio">Conectado ao Metricool. Os primeiros números aparecem quando o Metricool terminar a coleta (até 24 h depois da conexão).</p></div>` : `<div class="card"><h3>${esc(f.nome)}</h3><p class="vazio">Sem dados ainda: este perfil precisa estar conectado no Metricool.</p><a class="btn" href="#contas">Conectar →</a></div>`;
       const s = somaMetricas([id], periodo), serie = (m.serie || []).slice(-periodo);
       const max = Math.max(...serie.map(x => x.visualizacoes || 0), 1);
       return `<div class="card"><h3>${esc(f.nome)}</h3><div class="kpis cards">
