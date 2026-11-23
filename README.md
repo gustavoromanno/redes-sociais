@@ -1,20 +1,19 @@
-# Redes sociais — painéis
+# Central de Conteúdo — Romanno, Buckley e Afiliados
 
-- `index.html` — agenda Romanno Tecnologia + Buckley (filtro por marca)
-- `afiliados.html` — calendário de afiliados (Romanno Wear), vídeos por produto
-- `config.js` — perfis, redes e tipo de integração
-- `data/*.json` — o plano da semana; o painel salva aqui (com token) e o Claude lê/atualiza status
+- `index.html` — Romanno Tecnologia + Buckley (filtro por marca, cores de cada marca)
+- `afiliados.html` — Romanno Wear (vídeos por produto)
+- `config.js` — marcas, cores, perfis, integração e marca no Metricool
+- `data/marcas.json`, `data/afiliados.json` — pautas, tarefas, reuniões, respostas
+- `data/metricas.json` — números das redes (gravados pelo Claude a partir do Metricool)
 
 ## Rotina
-1. **Sexta · Planejar** — banco de pautas → "Pôr na semana" → marcar onde sai.
-2. **Sábado · Revisar e agendar** — link do vídeo uma vez, legenda/CTA/capa por rede, "Aprovar lote".
-   Depois, no projeto "Redes Sociais" do Claude: *"agenda a semana aprovada"*.
-3. **Semana · Acompanhar** — status, links, alertas de atraso/falha, posts manuais com legenda pronta.
+1. **Sexta · Planejar semana** — aceite as sugestões do Claude ou puxe pautas do banco, escolha dia, hora e redes.
+2. **Sábado · Revisar e agendar** — vídeo uma vez, legenda/CTA/capa por rede, "Aprovar lote". Depois peça ao Claude: *"agenda a semana aprovada"*.
+3. **Semana · Fiscal de post** — o Claude confere às 10h37, 18h37 e 22h37 e avisa no celular se algo falhar.
 
-## Status
-`rascunho` → `aprovado` (Claude agenda no Metricool) → `agendado` → `publicado` / `falhou`.
-Sem integração automática: `manual` (você posta; legenda e vídeo prontos).
+## Etapas e status
+Etapa da pauta: pauta → produção → revisão → aprovado → agendado → publicado.
+Status por rede: rascunho → aprovado → agendado → publicado / falhou / aguardando; sem integração: manual.
 
-## Token (opcional, para sincronizar entre aparelhos)
-GitHub → Settings → Developer settings → Fine-grained tokens → só este repositório → *Contents: Read and write*.
-Cole em **Contas**. Fica salvo só no navegador do aparelho.
+## Sincronização
+Token fine-grained só deste repositório, *Contents: Read and write*, colado em **Sincronização**.
