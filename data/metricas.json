@@ -1,11 +1,51 @@
 {
- "atualizado": 1795527511888,
+ "atualizado": 1795613914591,
  "perfis": {
   "ig-wear": {
-   "seguidores": 0,
+   "seguidores": 7,
    "serie": [
     {
-     "dia": "2026-11-24",
+     "dia": "2026-11-19",
+     "novos": 0,
+     "deixaram": 0,
+     "alcance": 0,
+     "visualizacoes": 0,
+     "interacoes": 0
+    },
+    {
+     "dia": "2026-11-20",
+     "novos": 0,
+     "deixaram": 0,
+     "alcance": 0,
+     "visualizacoes": 0,
+     "interacoes": 0
+    },
+    {
+     "dia": "2026-11-21",
+     "novos": 0,
+     "deixaram": 0,
+     "alcance": 0,
+     "visualizacoes": 0,
+     "interacoes": 0
+    },
+    {
+     "dia": "2026-11-22",
+     "novos": 0,
+     "deixaram": 0,
+     "alcance": 0,
+     "visualizacoes": 0,
+     "interacoes": 0
+    },
+    {
+     "dia": "2026-11-23",
+     "novos": 0,
+     "deixaram": 0,
+     "alcance": 156,
+     "visualizacoes": 179,
+     "interacoes": 4
+    },
+    {
+     "dia": "2026-11-25",
      "novos": 0,
      "deixaram": 0,
      "alcance": 0,
@@ -15,7 +55,7 @@
    ]
   },
   "tt-wear": {
-   "seguidores": 87,
+   "seguidores": 89,
    "serie": [
     {
      "dia": "2026-11-09",
@@ -45,9 +85,9 @@
      "dia": "2026-11-12",
      "novos": 1,
      "deixaram": 0,
-     "alcance": 0,
+     "alcance": 412,
      "visualizacoes": 1005,
-     "interacoes": 0
+     "interacoes": 30
     },
     {
      "dia": "2026-11-13",
@@ -135,15 +175,7 @@
      "deixaram": 0,
      "alcance": 0,
      "visualizacoes": 0,
-     "interacoes": 0
-    },
-    {
-     "dia": "2026-11-24",
-     "novos": 0,
-     "deixaram": 0,
-     "alcance": 0,
-     "visualizacoes": 0,
-     "interacoes": 0
+     "interacoes": 10
     }
    ]
   },
@@ -173,6 +205,14 @@
      "alcance": 0,
      "visualizacoes": 0,
      "interacoes": 0
+    },
+    {
+     "dia": "2026-11-25",
+     "novos": 0,
+     "deixaram": 0,
+     "alcance": 0,
+     "visualizacoes": 0,
+     "interacoes": 0
     }
    ]
   },
@@ -188,7 +228,15 @@
      "interacoes": 0
     },
     {
-     "dia": "2026-11-24",
+     "dia": "2026-11-23",
+     "novos": 0,
+     "deixaram": 0,
+     "alcance": 0,
+     "visualizacoes": 0,
+     "interacoes": 0
+    },
+    {
+     "dia": "2026-11-25",
      "novos": 0,
      "deixaram": 0,
      "alcance": 0,
