@@ -20,7 +20,7 @@ function segundaPadrao() {
 function migrar(d) {
   d ||= { atualizado: 0, pautas: [] };
   d.tarefas ||= []; d.reunioes ||= []; d.respostas ||= []; d.linha ||= {};
-  d.pautas.forEach(p => { p.etapa ||= p.dia ? 'producao' : 'pauta'; p.grupo ||= GRUPOS[0]; p.destinos ||= {}; p.feito ||= {}; });
+  d.pautas.forEach(p => { p.etapa ||= p.dia ? 'producao' : 'pauta'; p.grupo ||= GRUPOS[0]; p.destinos ||= {}; p.feito ||= {}; Object.values(p.destinos).forEach(separar); });
   return d;
 }
 
@@ -29,7 +29,9 @@ const NDIAS = P.semanaCompleta ? 7 : 5;
 const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
 const STATUS = { rascunho: 'Rascunho', aprovado: 'Aprovado', agendado: 'Agendado', aguardando: 'Aguardando confirmação', publicado: 'Publicado', falhou: 'Falhou', manual: 'Manual — pronto p/ postar' };
 const ETAPAS = { pauta: 'Pauta', producao: 'Produção', revisao: 'Revisão', aprovado: 'Aprovado', agendado: 'Agendado', publicado: 'Publicado' };
-const novoDestino = () => ({ legenda: '', cta: '', capa: '', status: 'rascunho', link: '' });
+const novoDestino = () => ({ legenda: '', hashtags: '', cta: '', capa: '', status: 'rascunho', link: '' });
+const textoFinal = d => [d.legenda, d.cta, d.hashtags].filter(Boolean).join('\n\n');
+function separar(d) { if (d.hashtags !== undefined) return; const m = (d.legenda || '').match(/\n*((?:#[^\s#]+\s*)+)$/); d.hashtags = m ? m[1].trim() : ''; if (m) d.legenda = d.legenda.slice(0, m.index).trim(); }
 
 const diasSemana = () => { const [y, m, d] = semana.split('-').map(Number); return [...Array(NDIAS).keys()].map(i => ymd(new Date(y, m - 1, d + i))); };
 const quando = p => new Date(`${p.dia}T${p.hora || '00:00'}:00-03:00`);
@@ -325,9 +327,10 @@ const PAGINAS = {
             <div class="prevtopo"><b>${PERFIS[id].rede}</b> · ${esc(PERFIS[id].nome)}<br><span class="muted">${fmt(p)}</span><br><span class="modo ${m.t}">${m.txt}</span>
             ${PERFIS[id].rede === 'Instagram' && p.vitrine ? '<p class="muted">Link não fica clicável na legenda: use bio ou stories.</p>' : ''}</div>
             <textarea data-leg="${id}" data-id="${p.id}" placeholder="Legenda para ${PERFIS[id].rede}">${esc(d.legenda)}</textarea>
+            <input data-hash="${id}" data-id="${p.id}" value="${esc(d.hashtags)}" placeholder="Hashtags de ${PERFIS[id].rede}">
             <input data-cta="${id}" data-id="${p.id}" value="${esc(d.cta)}" placeholder="CTA">
             <input data-capa="${id}" data-id="${p.id}" value="${esc(d.capa)}" placeholder="Capa: link da imagem ou segundo do vídeo (ex.: 3s)">
-            <div class="previa">${esc(d.legenda)}${d.cta ? '\n\n' + esc(d.cta) : ''}</div>
+            <div class="previa">${esc(textoFinal(d))}</div>
           </div>`; }).join('')}</div>
       </div>`).join('') || '<p class="vazio">Nenhuma pauta nesta semana. Planeje em Sexta · Planejar semana.</p>'}</section>
     <section><div class="card sticky"><h3>Aprovar lote</h3>
@@ -353,7 +356,7 @@ const PAGINAS = {
           <input data-link="${id}" data-id="${p.id}" value="${esc(d.link)}" placeholder="Link do post">
           <div class="row">${d.link ? `<a class="link" href="${esc(d.link)}" target="_blank" rel="noopener">abrir</a>` : ''}
           ${p.arte ? `<a class="link" href="${esc(p.arte)}" target="_blank" rel="noopener">artes</a>` : ''}<button class="btn ghost" data-acao="copiar" data-id="${p.id}" data-d="${id}">Copiar legenda</button>${p.video ? `<a class="link" href="${esc(p.video)}" target="_blank" rel="noopener" download>baixar vídeo</a>` : ''}</div>
-          <div class="previa leg">${d.legenda ? esc(d.legenda) + (d.cta ? '\n\n' + esc(d.cta) : '') : '<span class="erro">Sem legenda ainda.</span>'}</div>
+          <div class="previa leg">${d.legenda ? esc(textoFinal(d)) : '<span class="erro">Sem legenda ainda.</span>'}</div>
         </div>`).join('')).join('')}` : ''; }).join('')}`;
   },
 
@@ -460,6 +463,13 @@ function abrir(id) {
     <label>Ideia / funcionalidade confirmada<textarea data-campo="notas" data-id="${id}">${esc(p.notas)}</textarea></label>
     <label>Roteiro<textarea data-campo="roteiro" data-id="${id}">${esc(p.roteiro)}</textarea></label>
     <label>Link do vídeo<input data-campo="video" data-id="${id}" value="${esc(p.video)}"></label>
+    <h3 style="margin-top: 18px">Legenda e hashtags por rede</h3>
+    ${P.grupos[p.grupo].map(rid => { const d = p.destinos[rid]; const f = PERFIS[rid]; return d ? `<div class="destino" style="margin-bottom: 12px">
+      <div class="cardhead"><div><span class="rede r-${f.rede.toLowerCase()}" style="display: inline-grid; width: 28px; height: 28px; border-radius: 8px; margin-right: 8px">${f.rede[0]}</span><b>${f.rede}</b> <span class="muted">${esc(f.nome)}</span></div><button type="button" class="btn ghost" data-acao="copiar" data-id="${id}" data-d="${rid}">Copiar</button></div>
+      <label>Legenda<textarea data-leg="${rid}" data-id="${id}">${esc(d.legenda)}</textarea></label>
+      <label>Hashtags<input data-hash="${rid}" data-id="${id}" value="${esc(d.hashtags)}" placeholder="#exemplo #outra"></label>
+      <label>CTA (opcional)<input data-cta="${rid}" data-id="${id}" value="${esc(d.cta)}"></label>
+      <div class="previa">${esc(textoFinal(d))}</div></div>` : `<div class="li"><span class="muted">${f.rede} · ${esc(f.nome)} — não sai nesta rede</span><button type="button" class="link" data-acao="add-destino" data-id="${id}" data-d="${rid}">+ adicionar</button></div>`; }).join('')}
     <label>Artes (link do design)<input data-campo="arte" data-id="${id}" value="${esc(p.arte)}"></label>${p.arte ? `<a class="link" href="${esc(p.arte)}" target="_blank" rel="noopener">Abrir artes →</a>` : ''}
     <div class="row"><button class="btn ghost" data-acao="apagar" data-id="${id}" type="button">Apagar pauta</button><button class="btn">Fechar</button></div></form>`;
   d.showModal();
@@ -502,12 +512,13 @@ document.addEventListener('click', e => {
       (p.sugestao.destinos || []).forEach(id => p.destinos[id] ||= novoDestino()); padraoDestinos(p); delete p.sugestao; return salvar();
     case 'recusar': delete p.sugestao; return salvar();
     case 'tirar': p.dia = ''; return salvar();
+    case 'add-destino': p.destinos[ds.d] = novoDestino(); salvar(false); return abrir(p.id);
     case 'apagar': if (confirm('Apagar esta pauta?')) { db.pautas = db.pautas.filter(x => x !== p); $('#modal').close(); salvar(); } return;
-    case 'replicar': { const [first, ...rest] = Object.values(p.destinos); rest.forEach(d => { d.legenda = first.legenda; d.cta = first.cta; }); return salvar(); }
+    case 'replicar': { const [first, ...rest] = Object.values(p.destinos); rest.forEach(d => { d.legenda = first.legenda; d.cta = first.cta; d.hashtags = first.hashtags; }); return salvar(); }
     case 'aprovar': daSemana().forEach(p => { let algum = false; Object.entries(p.destinos).forEach(([id, d]) => {
         if (d.status === 'rascunho' && pronto(p, id)) { d.status = modo(id, p).t === 'auto' ? 'aprovado' : 'manual'; algum = true; } });
         if (algum && ['pauta', 'producao', 'revisao'].includes(p.etapa)) p.etapa = 'aprovado'; }); return salvar();
-    case 'copiar': { const d = p.destinos[ds.d]; navigator.clipboard.writeText(d.legenda + (d.cta ? '\n\n' + d.cta : '')); b.textContent = 'Copiado!'; return; }
+    case 'copiar': { const d = p.destinos[ds.d]; navigator.clipboard.writeText(textoFinal(d)); b.textContent = 'Copiado!'; return; }
     case 'apagar-tarefa': db.tarefas = db.tarefas.filter(t => t.id !== ds.tid); return salvar();
     case 'passos': { const r = db.reunioes.find(r => r.id === ds.rid); (r.passos || '').split('\n').filter(Boolean).forEach(txt => db.tarefas.push({ id: uid(), txt: `${r.cliente}: ${txt}`, tipo: 'tarefa', feito: false })); location.hash = 'tarefas'; return salvar(); }
     case 'copiar-resp': navigator.clipboard.writeText(db.respostas.find(r => r.id === ds.rid).texto); b.textContent = 'Copiado!'; return;
@@ -530,6 +541,7 @@ document.addEventListener('change', e => {
   else if (ds.destino) { if (el.checked) p.destinos[ds.destino] = novoDestino(); else delete p.destinos[ds.destino]; }
   else if (ds.feito) p.feito[ds.feito] = el.checked;
   else if (ds.leg) p.destinos[ds.leg].legenda = el.value;
+  else if (ds.hash) p.destinos[ds.hash].hashtags = el.value;
   else if (ds.cta) p.destinos[ds.cta].cta = el.value;
   else if (ds.capa) p.destinos[ds.capa].capa = el.value;
   else if (ds.status) p.destinos[ds.status].status = el.value;
@@ -539,8 +551,8 @@ document.addEventListener('change', e => {
 });
 document.addEventListener('input', e => {
   const box = e.target.closest('.destino'); if (!box) return;
-  const leg = box.querySelector('[data-leg]').value, cta = box.querySelector('[data-cta]').value;
-  box.querySelector('.previa').textContent = leg + (cta ? '\n\n' + cta : '');
+  const v = s => box.querySelector(s)?.value || '';
+  const pv = box.querySelector('.previa'); if (pv) pv.textContent = textoFinal({ legenda: v('[data-leg]'), cta: v('[data-cta]'), hashtags: v('[data-hash]') });
 });
 document.addEventListener('dragstart', e => { const c = e.target.closest('[data-drag]'); if (c) e.dataTransfer.setData('text/plain', c.dataset.drag); });
 document.addEventListener('dragover', e => { if (e.target.closest('[data-col]')) e.preventDefault(); });
