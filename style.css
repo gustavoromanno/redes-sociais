@@ -213,3 +213,4 @@ dialog::backdrop { background: rgba(17,17,17,.4) }
 .disp .card { margin: 0 }
 .card.mini .chk { align-items: flex-start; flex-wrap: wrap; line-height: 1.3 }
 .card.mini .chk .muted { width: 100%; padding-left: 22px; font-size: 12px }
+.card.linha .leg { grid-column: 1 / -1; font-size: 14px; line-height: 1.5 }

@@ -352,7 +352,8 @@ const PAGINAS = {
           <select data-status="${id}" data-id="${p.id}">${Object.entries(STATUS).map(([k, v]) => `<option value="${k}" ${d.status === k ? 'selected' : ''}>${v}</option>`).join('')}</select>
           <input data-link="${id}" data-id="${p.id}" value="${esc(d.link)}" placeholder="Link do post">
           <div class="row">${d.link ? `<a class="link" href="${esc(d.link)}" target="_blank" rel="noopener">abrir</a>` : ''}
-          ${p.arte ? `<a class="link" href="${esc(p.arte)}" target="_blank" rel="noopener">artes</a>` : ''}${d.status === 'manual' ? `<button class="btn ghost" data-acao="copiar" data-id="${p.id}" data-d="${id}">Copiar legenda</button>${p.video ? `<a class="link" href="${esc(p.video)}" target="_blank" rel="noopener">baixar vídeo</a>` : ''}` : ''}</div>
+          ${p.arte ? `<a class="link" href="${esc(p.arte)}" target="_blank" rel="noopener">artes</a>` : ''}<button class="btn ghost" data-acao="copiar" data-id="${p.id}" data-d="${id}">Copiar legenda</button>${p.video ? `<a class="link" href="${esc(p.video)}" target="_blank" rel="noopener" download>baixar vídeo</a>` : ''}</div>
+          <div class="previa leg">${d.legenda ? esc(d.legenda) + (d.cta ? '\n\n' + esc(d.cta) : '') : '<span class="erro">Sem legenda ainda.</span>'}</div>
         </div>`).join('')).join('')}` : ''; }).join('')}`;
   },
 
