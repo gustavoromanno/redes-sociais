@@ -249,7 +249,7 @@ const PAGINAS = {
       const ps = visiveis().filter(p => p.dia === k).sort((a, b) => (a.hora || '').localeCompare(b.hora || ''));
       const reun = db.reunioes.filter(r => r.dia === k);
       cells += `<div class="dia ${k === hoje ? 'hoje' : ''}" data-novo-dia="${k}"><span class="n">${d}</span>
-        ${ps.map(p => `<button class="evento e-${p.etapa}" data-abrir="${p.id}">${ponto(p)}<b>${p.hora || ''}</b> ${esc(p.titulo)}</button>`).join('')}
+        ${ps.map(p => `<button class="evento" data-abrir="${p.id}"><i class="dot e-${p.etapa}" title="${ETAPAS[p.etapa]}"></i>${PID === 'marcas' ? ponto(p) : ''}<b>${p.hora || ''}</b> ${esc(p.titulo)}</button>`).join('')}
         ${reun.map(r => `<div class="evento reun">▣ ${esc(r.cliente)}</div>`).join('')}</div>`;
     }
     return cabeca('Cronograma', `${MESES[m][0].toUpperCase() + MESES[m].slice(1)} de ${y}.`, `${visiveis().filter(p => p.dia?.startsWith(ymd(mes).slice(0, 7))).length} conteúdos planejados. Clique em um dia vazio para criar uma pauta nele.`,
@@ -536,7 +536,8 @@ document.addEventListener('change', e => {
   if (ds.reun) { db.reunioes.find(r => r.id === ds.rid)[ds.reun] = el.value; return salvar(false); }
   if (ds.linha) { db.linha[ds.linha] = el.value; return salvar(false); }
   const p = achar(ds.id); if (!p) return;
-  if (ds.campo) { p[ds.campo] = el.value; if (ds.campo === 'grupo') p.destinos = {}; }
+  if (ds.campo) { p[ds.campo] = el.value; if (ds.campo === 'grupo') p.destinos = {};
+    if (ds.campo === 'etapa' && el.value === 'publicado') Object.values(p.destinos).forEach(d => { if (d.status !== 'falhou') d.status = 'publicado'; }); }
   else if (ds.campoChk) p[ds.campoChk] = el.checked;
   else if (ds.destino) { if (el.checked) p.destinos[ds.destino] = novoDestino(); else delete p.destinos[ds.destino]; }
   else if (ds.feito) p.feito[ds.feito] = el.checked;
@@ -544,7 +545,7 @@ document.addEventListener('change', e => {
   else if (ds.hash) p.destinos[ds.hash].hashtags = el.value;
   else if (ds.cta) p.destinos[ds.cta].cta = el.value;
   else if (ds.capa) p.destinos[ds.capa].capa = el.value;
-  else if (ds.status) p.destinos[ds.status].status = el.value;
+  else if (ds.status) { p.destinos[ds.status].status = el.value; if (Object.values(p.destinos).every(d => d.status === 'publicado')) p.etapa = 'publicado'; }
   else if (ds.link) p.destinos[ds.link].link = el.value;
   else return;
   salvar(!$('#modal').open && (el.type === 'checkbox' || el.tagName === 'SELECT'));

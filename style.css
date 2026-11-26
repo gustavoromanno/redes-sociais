@@ -76,7 +76,7 @@ input[type=checkbox] { width: auto; margin: 0 6px 0 0; accent-color: var(--marca
 .row input, .row select { width: auto; margin: 0 }
 
 .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: middle; flex: none }
-.e-pauta { background: #8E959A } .e-producao { background: #1E2A47 } .e-revisao { background: #B26B00 } .e-aprovado { background: #2F7A5C } .e-agendado { background: #3B6FD8 } .e-publicado { background: #111 }
+.e-pauta { background: #8E959A } .e-producao { background: #1E2A47 } .e-revisao { background: #B26B00 } .e-aprovado { background: #7B61C9 } .e-agendado { background: #3B6FD8 } .e-publicado { background: #1B8A3C }
 .tag { background: var(--claro); border-radius: 99px; padding: 1px 9px; font-size: 12px; font-weight: 500 }
 .pill { background: var(--marca); color: #fff; border-radius: 99px; padding: 5px 14px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px }
 
