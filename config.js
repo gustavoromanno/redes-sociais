@@ -33,6 +33,7 @@ const PAINEIS = {
   afiliados: {
     titulo: 'Afiliados',
     arquivo: 'data/afiliados.json',
+    semanaCompleta: true,
     grupos: { wear: ['tt-wear', 'ig-wear', 'th-wear', 'fb-wear'] },
   },
 };

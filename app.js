@@ -24,13 +24,14 @@ function migrar(d) {
   return d;
 }
 
-const DIAS = ['seg', 'ter', 'qua', 'qui', 'sex'];
+const DIAS = ['seg', 'ter', 'qua', 'qui', 'sex', 'sáb', 'dom'];
+const NDIAS = P.semanaCompleta ? 7 : 5;
 const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
 const STATUS = { rascunho: 'Rascunho', aprovado: 'Aprovado', agendado: 'Agendado', aguardando: 'Aguardando confirmação', publicado: 'Publicado', falhou: 'Falhou', manual: 'Manual — pronto p/ postar' };
 const ETAPAS = { pauta: 'Pauta', producao: 'Produção', revisao: 'Revisão', aprovado: 'Aprovado', agendado: 'Agendado', publicado: 'Publicado' };
 const novoDestino = () => ({ legenda: '', cta: '', capa: '', status: 'rascunho', link: '' });
 
-const diasSemana = () => { const [y, m, d] = semana.split('-').map(Number); return [0, 1, 2, 3, 4].map(i => ymd(new Date(y, m - 1, d + i))); };
+const diasSemana = () => { const [y, m, d] = semana.split('-').map(Number); return [...Array(NDIAS).keys()].map(i => ymd(new Date(y, m - 1, d + i))); };
 const quando = p => new Date(`${p.dia}T${p.hora || '00:00'}:00-03:00`);
 const dataCurta = dia => dia ? `${dia.slice(8)}/${dia.slice(5, 7)}` : 'sem data';
 const fmt = p => p.dia ? `${['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'][new Date(p.dia + 'T12:00').getDay()]} ${dataCurta(p.dia)} às ${p.hora || '--:--'} (Brasília)` : 'sem data';
@@ -154,7 +155,7 @@ function cabeca(eyebrow, titulo, lead, extra = '') {
   const filtros = PID === 'marcas' ? `<div class="seg">${['todos', ...GRUPOS].map(g => `<button data-filtro="${g}" class="${filtro === g ? 'on' : ''}">${g === 'todos' ? 'Todos' : MARCAS[g].nome}</button>`).join('')}</div>` : '';
   return `<header class="cabeca"><div><div class="eyebrow">${P.titulo} · ${eyebrow}</div><h1>${titulo}</h1>${lead ? `<p class="lead">${lead}</p>` : ''}</div><div class="acoes">${filtros}${extra}</div></header>`;
 }
-const navSemana = () => `<div class="seg"><button data-sem="-1">‹</button><button class="on">Semana ${dataCurta(diasSemana()[0])} a ${dataCurta(diasSemana()[4])}</button><button data-sem="1">›</button></div>`;
+const navSemana = () => `<div class="seg"><button data-sem="-1">‹</button><button class="on">Semana ${dataCurta(diasSemana()[0])} a ${dataCurta(diasSemana()[NDIAS - 1])}</button><button data-sem="1">›</button></div>`;
 const selGrupo = (nome = 'grupo', val) => PID === 'afiliados' ? '' : `<label>Marca<select name="${nome}">${GRUPOS.map(g => `<option value="${g}" ${(val || (filtro === 'todos' ? GRUPOS[0] : filtro)) === g ? 'selected' : ''}>${MARCAS[g].nome}</option>`).join('')}</select></label>`;
 const selFormato = (val) => `<label>Formato<select name="formato">${FORMATOS.map(f => `<option ${val === f ? 'selected' : ''}>${f}</option>`).join('')}</select></label>`;
 const saudacao = () => { const h = new Date().getHours(); return h < 12 ? 'Bom dia' : h < 18 ? 'Boa tarde' : 'Boa noite'; };
@@ -290,7 +291,7 @@ const PAGINAS = {
     return cabeca('Sexta · Planejar', 'Planejar semana.', 'Escolha as pautas de cada marca, o dia, o horário e onde cada uma sai. Depois veja o que falta preparar.', navSemana()) + `
     ${sug.length ? `<div class="card destaque"><h3>Sugestões do Claude para esta semana</h3>${sug.map(p => `<div class="li">${ponto(p)}<span class="cresce"><b>${esc(p.titulo)}</b> <span class="muted">${fmt(p.sugestao)} · ${(p.sugestao.destinos || []).map(id => PERFIS[id]?.rede).join(', ')}</span>${p.sugestao.motivo ? `<br><span class="muted">${esc(p.sugestao.motivo)}</span>` : ''}</span><button class="btn" data-acao="aceitar" data-id="${p.id}">Aceitar</button><button class="btn ghost" data-acao="recusar" data-id="${p.id}">Recusar</button></div>`).join('')}</div>` : ''}
     <section><h2>Semana</h2>
-        <div class="grade5">${diasSemana().map((dia, i) => `<div><div class="colhead">${DIAS[i]} ${dataCurta(dia)}</div>
+        <div class="grade5" style="grid-template-columns: repeat(${NDIAS}, minmax(0, 1fr))">${diasSemana().map((dia, i) => `<div><div class="colhead">${DIAS[i]} ${dataCurta(dia)}</div>
           ${semanaP.filter(p => p.dia === dia).map(p => `<div class="card mini">${ponto(p)}<b>${esc(p.titulo)}</b>
             <input type="time" data-campo="hora" data-id="${p.id}" value="${p.hora || ''}">
             ${P.grupos[p.grupo].map(id => `<label class="chk"><input type="checkbox" data-destino="${id}" data-id="${p.id}" ${p.destinos[id] ? 'checked' : ''}> ${esc(PERFIS[id].rede)} <span class="muted">${esc(PERFIS[id].nome.replace(PERFIS[id].rede + ' ', ''))}</span></label>`).join('')}
@@ -338,7 +339,7 @@ const PAGINAS = {
 
   fiscal() {
     const ps = daSemana(), al = alertas();
-    return cabeca('Semana · Fiscal de post', 'Fiscal de post.', 'O Claude confere os posts às 10h37, 18h37 e 22h37 (seg a sex): se saíram, se o link abre e se algo travou. Quebrou? Ele te avisa no celular.', navSemana()) + `
+    return cabeca('Semana · Fiscal de post', 'Fiscal de post.', 'O Claude confere os posts às 10h37, 18h37 e 22h37, todos os dias: se saíram, se o link abre e se algo travou. Quebrou? Ele te avisa no celular.', navSemana()) + `
     <div class="kpis cards3">
       <div class="card"><span>Para publicar</span><b>${ps.flatMap(p => Object.values(p.destinos)).filter(d => ['aprovado', 'agendado', 'manual'].includes(d.status)).length}</b></div>
       <div class="card"><span>Publicados</span><b>${ps.flatMap(p => Object.values(p.destinos)).filter(d => d.status === 'publicado').length}</b></div>
