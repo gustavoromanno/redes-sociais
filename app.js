@@ -103,11 +103,24 @@ async function baixar() {
       const j = await r.json(); sha = j.sha;
       remoto = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g, '')))));
     } else remoto = await (await fetch(`${P.arquivo}?${Date.now()}`)).json();
-    if ((remoto.atualizado || 0) > db.atualizado) { db = migrar(remoto); localStorage.setItem(KEY, JSON.stringify(db)); }
+    if ((remoto.atualizado || 0) > (db.base || 0)) { db = mesclar(migrar(remoto), db); localStorage.setItem(KEY, JSON.stringify(db)); }
     aviso('');
   } catch (e) { aviso(`Não consegui ler ${P.arquivo} do GitHub (${e}). Usando a cópia deste aparelho.`); }
   try { metr = await (await fetch(`data/metricas.json?${Date.now()}`)).json(); } catch { }
   desenhar();
+}
+// o que chegou do GitHub manda; por cima, só o que foi mexido neste aparelho depois da última leitura
+function mesclar(r, l) {
+  r.base = r.atualizado || 0;
+  const desde = l.base || 0;
+  r.pautas.forEach(p => {
+    const lp = l.pautas.find(x => x.id === p.id);
+    if (!lp || (lp._ed || 0) <= desde) return;
+    Object.assign(p, { etapa: lp.etapa, dia: lp.dia, hora: lp.hora, _ed: lp._ed });
+    Object.entries(p.destinos).forEach(([id, d]) => { const ld = lp.destinos[id]; if (ld) Object.assign(d, { status: ld.status, link: ld.link }); });
+  });
+  l.pautas.filter(lp => (lp._ed || 0) > desde && !r.pautas.some(p => p.id === lp.id)).forEach(lp => r.pautas.push(lp));
+  return r;
 }
 async function enviar() {
   const r = await api('PUT', { message: `painel: atualiza ${P.arquivo}`, sha, content: btoa(unescape(encodeURIComponent(JSON.stringify(db, null, 1)))) });
@@ -484,7 +497,7 @@ document.addEventListener('submit', e => {
   const tipo = e.target.dataset.form; if (!tipo) return;
   e.preventDefault();
   const f = Object.fromEntries(new FormData(e.target));
-  if (tipo === 'pauta') db.pautas.push({ id: uid(), grupo: f.grupo || GRUPOS[0], titulo: f.titulo, produto: f.produto, vitrine: f.vitrine, formato: f.formato, etapa: 'pauta', dia: '', hora: '', video: '', feito: {}, destinos: {} });
+  if (tipo === 'pauta') db.pautas.push({ _ed: Date.now(), id: uid(), grupo: f.grupo || GRUPOS[0], titulo: f.titulo, produto: f.produto, vitrine: f.vitrine, formato: f.formato, etapa: 'pauta', dia: '', hora: '', video: '', feito: {}, destinos: {} });
   if (tipo === 'tarefa') db.tarefas.push({ id: uid(), txt: f.txt, tipo: f.tipo, dia: f.dia, feito: false });
   if (tipo === 'reuniao') db.reunioes.push({ id: uid(), ...f, ata: '', decidido: '', passos: '' });
   if (tipo === 'resposta') db.respostas.push({ id: uid(), ...f });
@@ -502,6 +515,7 @@ document.addEventListener('click', e => {
   if (ds.abrir) { e.stopPropagation(); return abrir(ds.abrir); }
   if (ds.novoDia) { const p = nova(); p.dia = ds.novoDia; p.etapa = 'producao'; salvar(false); return abrir(p.id); }
   const p = achar(ds.id);
+  if (p && ds.acao) p._ed = Date.now();
   switch (ds.acao) {
     case 'nova': return abrir(nova().id);
     case 'mes-hoje': mes = primeiroDoMes(new Date()); return desenhar();
@@ -524,10 +538,10 @@ document.addEventListener('click', e => {
     case 'copiar-resp': navigator.clipboard.writeText(db.respostas.find(r => r.id === ds.rid).texto); b.textContent = 'Copiado!'; return;
     case 'apagar-resp': db.respostas = db.respostas.filter(r => r.id !== ds.rid); return salvar();
     case 'token': { const t = $('#token').value.trim(); if (t && !t.startsWith('••')) localStorage.setItem('rs-token', t); if (!t) localStorage.removeItem('rs-token'); return baixar(); }
-    case 'recarregar': db.atualizado = 0; return baixar();
+    case 'recarregar': db = migrar(null); return baixar();
   }
 });
-function nova() { const p = { id: uid(), grupo: filtro === 'todos' ? GRUPOS[0] : filtro, titulo: 'Nova pauta', formato: FORMATOS[0], etapa: 'pauta', dia: '', hora: '', video: '', feito: {}, destinos: {} }; db.pautas.push(p); return p; }
+function nova() { const p = { _ed: Date.now(), id: uid(), grupo: filtro === 'todos' ? GRUPOS[0] : filtro, titulo: 'Nova pauta', formato: FORMATOS[0], etapa: 'pauta', dia: '', hora: '', video: '', feito: {}, destinos: {} }; db.pautas.push(p); return p; }
 function padraoDestinos(p) { if (!Object.keys(p.destinos).length) P.grupos[p.grupo].forEach(id => PERFIS[id].integ !== 'pendente' && (p.destinos[id] = novoDestino())); }
 
 document.addEventListener('change', e => {
@@ -536,6 +550,7 @@ document.addEventListener('change', e => {
   if (ds.reun) { db.reunioes.find(r => r.id === ds.rid)[ds.reun] = el.value; return salvar(false); }
   if (ds.linha) { db.linha[ds.linha] = el.value; return salvar(false); }
   const p = achar(ds.id); if (!p) return;
+  p._ed = Date.now();
   if (ds.campo) { p[ds.campo] = el.value; if (ds.campo === 'grupo') p.destinos = {};
     if (ds.campo === 'etapa' && el.value === 'publicado') Object.values(p.destinos).forEach(d => { if (d.status !== 'falhou') d.status = 'publicado'; }); }
   else if (ds.campoChk) p[ds.campoChk] = el.checked;
