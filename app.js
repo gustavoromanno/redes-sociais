@@ -30,6 +30,9 @@ const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julh
 const STATUS = { rascunho: 'Rascunho', aprovado: 'Aprovado', agendado: 'Agendado', aguardando: 'Aguardando confirmação', publicado: 'Publicado', falhou: 'Falhou', manual: 'Manual — pronto p/ postar' };
 const ETAPAS = { pauta: 'Pauta', producao: 'Produção', revisao: 'Revisão', aprovado: 'Aprovado', agendado: 'Agendado', publicado: 'Publicado' };
 const novoDestino = () => ({ legenda: '', hashtags: '', cta: '', capa: '', status: 'rascunho', link: '' });
+const SIGLA = { TikTok: 'TT', Instagram: 'IG', Threads: 'TH', Facebook: 'FB' };
+function sincEtapa(p) { const ds = Object.values(p.destinos); if (ds.length && ds.every(d => d.status === 'publicado')) p.etapa = 'publicado'; else if (p.etapa === 'publicado') p.etapa = 'aprovado'; }
+function redesSel(p) { return `<span class="redes">${Object.entries(p.destinos).map(([id, d]) => `<i class="${d.status === 'publicado' ? 'ok' : d.status === 'falhou' ? 'x' : ''}" title="${PERFIS[id].rede}: ${STATUS[d.status]}">${SIGLA[PERFIS[id].rede]}</i>`).join('')}</span>`; }
 const textoFinal = d => [d.legenda, d.cta, d.hashtags].filter(Boolean).join('\n\n');
 function separar(d) { if (d.hashtags !== undefined) return; const m = (d.legenda || '').match(/\n*((?:#[^\s#]+\s*)+)$/); d.hashtags = m ? m[1].trim() : ''; if (m) d.legenda = d.legenda.slice(0, m.index).trim(); }
 
@@ -77,6 +80,7 @@ function alertas() {
     else if (d.status === 'aguardando') out.push(['manual', `Aguardando confirmação: ${r}${d.obs ? ' — ' + d.obs : ''}`]);
     else if (d.status === 'manual' && quando(p) - agora < 864e5) out.push(['manual', `Ação manual: ${r}`]);
     else if (d.status === 'rascunho' && quando(p) > agora && quando(p) - agora < 864e5) out.push(['manual', `Não aprovado: ${r}`]);
+    if (d.status !== 'publicado' && quando(p) < agora && Object.values(p.destinos).some(x => x.status === 'publicado')) out.push(['manual', `Falta postar: ${r}`]);
     if (d.check && d.check.ok === false) out.push(['erro', `Fiscal: ${r} — ${d.check.txt}`]);
   }));
   return out;
@@ -262,7 +266,7 @@ const PAGINAS = {
       const ps = visiveis().filter(p => p.dia === k).sort((a, b) => (a.hora || '').localeCompare(b.hora || ''));
       const reun = db.reunioes.filter(r => r.dia === k);
       cells += `<div class="dia ${k === hoje ? 'hoje' : ''}" data-novo-dia="${k}"><span class="n">${d}</span>
-        ${ps.map(p => `<button class="evento" data-abrir="${p.id}"><i class="dot e-${p.etapa}" title="${ETAPAS[p.etapa]}"></i>${PID === 'marcas' ? ponto(p) : ''}<b>${p.hora || ''}</b> ${esc(p.titulo)}</button>`).join('')}
+        ${ps.map(p => { const ds = Object.values(p.destinos), n = ds.filter(d => d.status === 'publicado').length, cls = n && n < ds.length ? 'parcial' : (!n && ds.length && quando(p) < new Date() ? 'atrasado' : ''); return `<button class="evento ${cls}" data-abrir="${p.id}"><i class="dot e-${p.etapa}" title="${ETAPAS[p.etapa]}"></i>${PID === 'marcas' ? ponto(p) : ''}<b>${p.hora || ''}</b> ${esc(p.titulo)}${ds.length ? redesSel(p) : ''}</button>`; }).join('')}
         ${reun.map(r => `<div class="evento reun">▣ ${esc(r.cliente)}</div>`).join('')}</div>`;
     }
     return cabeca('Cronograma', `${MESES[m][0].toUpperCase() + MESES[m].slice(1)} de ${y}.`, `${visiveis().filter(p => p.dia?.startsWith(ymd(mes).slice(0, 7))).length} conteúdos planejados. Clique em um dia vazio para criar uma pauta nele.`,
@@ -478,7 +482,8 @@ function abrir(id) {
     <label>Link do vídeo<input data-campo="video" data-id="${id}" value="${esc(p.video)}"></label>
     <h3 style="margin-top: 18px">Legenda e hashtags por rede</h3>
     ${P.grupos[p.grupo].map(rid => { const d = p.destinos[rid]; const f = PERFIS[rid]; return d ? `<div class="destino" style="margin-bottom: 12px">
-      <div class="cardhead"><div><span class="rede r-${f.rede.toLowerCase()}" style="display: inline-grid; width: 28px; height: 28px; border-radius: 8px; margin-right: 8px">${f.rede[0]}</span><b>${f.rede}</b> <span class="muted">${esc(f.nome)}</span></div><button type="button" class="btn ghost" data-acao="copiar" data-id="${id}" data-d="${rid}">Copiar</button></div>
+      <div class="cardhead"><div><span class="rede r-${f.rede.toLowerCase()}" style="display: inline-grid; width: 28px; height: 28px; border-radius: 8px; margin-right: 8px">${f.rede[0]}</span><b>${f.rede}</b> <span class="muted">${esc(f.nome)}</span></div><div class="row" style="margin: 0"><label class="chk postado"><input type="checkbox" data-postado="${rid}" data-id="${id}" ${d.status === 'publicado' ? 'checked' : ''}> Já postei</label><button type="button" class="btn ghost" data-acao="copiar" data-id="${id}" data-d="${rid}">Copiar</button></div></div>
+      ${d.status === 'publicado' ? `<label>Link do post (opcional)<input data-link="${rid}" data-id="${id}" value="${esc(d.link)}" placeholder="Cole o link de ${f.rede}"></label>` : ''}
       <label>Legenda<textarea data-leg="${rid}" data-id="${id}">${esc(d.legenda)}</textarea></label>
       <label>Hashtags<input data-hash="${rid}" data-id="${id}" value="${esc(d.hashtags)}" placeholder="#exemplo #outra"></label>
       <label>CTA (opcional)<input data-cta="${rid}" data-id="${id}" value="${esc(d.cta)}"></label>
@@ -560,7 +565,8 @@ document.addEventListener('change', e => {
   else if (ds.hash) p.destinos[ds.hash].hashtags = el.value;
   else if (ds.cta) p.destinos[ds.cta].cta = el.value;
   else if (ds.capa) p.destinos[ds.capa].capa = el.value;
-  else if (ds.status) { p.destinos[ds.status].status = el.value; if (Object.values(p.destinos).every(d => d.status === 'publicado')) p.etapa = 'publicado'; }
+  else if (ds.status) { p.destinos[ds.status].status = el.value; sincEtapa(p); }
+  else if (ds.postado) { p.destinos[ds.postado].status = el.checked ? 'publicado' : (modo(ds.postado, p).t === 'auto' ? 'aprovado' : 'manual'); sincEtapa(p); salvar(false); return abrir(p.id); }
   else if (ds.link) p.destinos[ds.link].link = el.value;
   else return;
   salvar(!$('#modal').open && (el.type === 'checkbox' || el.tagName === 'SELECT'));
