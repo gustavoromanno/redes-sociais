@@ -1,5 +1,5 @@
 {
- "atualizado": 1795736217286,
+ "atualizado": 1795814674407,
  "pautas": [
   {
    "id": "jeans01",
@@ -377,7 +377,18 @@
    },
    "etapa": "producao",
    "dia": "2026-11-27",
-   "hora": "12:00"
+   "hora": "12:00",
+   "sugestao": {
+    "dia": "2026-12-01",
+    "hora": "10:00",
+    "destinos": [
+     "tt-wear",
+     "ig-wear",
+     "th-wear",
+     "fb-wear"
+    ],
+    "motivo": "Bermuda bege: data de 27/11 passou sem postar; terça 10h é o pico do TikTok (Metricool)."
+   }
   },
   {
    "id": "jeans07",
@@ -863,7 +874,18 @@
    },
    "etapa": "producao",
    "dia": "2026-11-28",
-   "hora": "14:00"
+   "hora": "14:00",
+   "sugestao": {
+    "dia": "2026-12-03",
+    "hora": "10:00",
+    "destinos": [
+     "tt-wear",
+     "ig-wear",
+     "th-wear",
+     "fb-wear"
+    ],
+    "motivo": "Bermuda bege de volta pra alternar com a polo; quinta 10h é o pico do TikTok (Metricool)."
+   }
   },
   {
    "id": "jeans15",
@@ -1079,7 +1101,18 @@
    },
    "etapa": "producao",
    "dia": "2026-11-28",
-   "hora": "21:30"
+   "hora": "21:30",
+   "sugestao": {
+    "dia": "2026-12-02",
+    "hora": "10:00",
+    "destinos": [
+     "tt-wear",
+     "ig-wear",
+     "th-wear",
+     "fb-wear"
+    ],
+    "motivo": "Camisa polo vermelha no meio da semana; quarta 10h é o pico do TikTok (Metricool)."
+   }
   },
   {
    "id": "jeans16",
@@ -1349,7 +1382,18 @@
    },
    "etapa": "producao",
    "dia": "2026-11-29",
-   "hora": "16:00"
+   "hora": "16:00",
+   "sugestao": {
+    "dia": "2026-12-04",
+    "hora": "10:00",
+    "destinos": [
+     "tt-wear",
+     "ig-wear",
+     "th-wear",
+     "fb-wear"
+    ],
+    "motivo": "Fecha a semana com a bermuda bege; sexta 10h é o pico do TikTok (Metricool)."
+   }
   },
   {
    "id": "jeans20",
